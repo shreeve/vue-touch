@@ -107,7 +107,7 @@
 
   function update (el, binding) {
 
-    var fn = binding.value
+    var fn = function(evt) { binding.value(evt, binding.expression) }
     var cache = el.__vueTouch__
     var mc = cache.mc
     var handlers = cache.eventHandlers
